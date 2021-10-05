@@ -36,7 +36,9 @@ namespace HelloWorld
                 string yourName = Console.ReadLine();
                 Console.WriteLine("Your name is: " + yourName);
 
-                   
+                Console.WriteLine("What is your last name?");
+                string lastName = Console.ReadLine();
+                Console.WriteLine("So your full name is:" + yourName +  lastName);
         }
 
         public static int Example()
