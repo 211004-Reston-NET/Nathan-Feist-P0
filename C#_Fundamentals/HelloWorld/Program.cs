@@ -26,7 +26,13 @@ namespace HelloWorld
               //  Program test = new Program(); //This will instantiate the obj
                // text.Example();
                Program.Example();
-
+/*
+1. Be able to read what the user will write in the termina
+2. Be able to attached that value to a variable
+3. Write some statement that uses that variable back to the terminal
+Hint: look into the Console class
+4. Push this console application into a new remote repo in the organization title firstname-lastname-C#Hello
+*/
                House Nathan = new House(); 
                Nathan.MiceName = "Jerry";
                 Console.WriteLine(Nathan.MiceName);
