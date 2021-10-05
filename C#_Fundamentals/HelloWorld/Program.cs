@@ -36,7 +36,6 @@ namespace HelloWorld
                 string yourName = Console.ReadLine();
                 Console.WriteLine("Your name is: " + yourName);
 
-
                 
         }
 
