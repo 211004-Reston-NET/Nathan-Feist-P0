@@ -29,8 +29,15 @@ namespace HelloWorld
 
                House Nathan = new House(); 
                Nathan.MiceName = "Jerry";
-              Console.WriteLine(Nathan.MiceName);
+                Console.WriteLine(Nathan.MiceName);
+                Console.WriteLine(Nathan.Owner);
 
+                Console.WriteLine("Enter your name:");
+                string yourName = Console.ReadLine();
+                Console.WriteLine("Your name is: " + yourName);
+
+
+                
         }
 
         public static int Example()
