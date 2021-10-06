@@ -1,4 +1,5 @@
 ﻿using System;
+using CollectionFunction;
 using HouseFunction;
 
 // this is a comment
@@ -45,7 +46,11 @@ Hint: look into the Console class
                 Console.WriteLine("What is your last name?");
                 string lastName = Console.ReadLine();
                 Console.WriteLine("So your full name is:" + yourName + (" ") + lastName);
+
+            Collection collectionObj = new Collection();
+            collectionObj.CollectionMain();
         }
+
 
         public static int Example()
     {   
