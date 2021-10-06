@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace CollectionFunction
@@ -44,6 +45,22 @@ namespace CollectionFunction
                 Console.WriteLine(strings[i]);
             } 
             
+
+            //Non Generic Collection
+            ArrayList nonGeneric = new ArrayList();
+
+            //Add some elements
+            nonGeneric.Add(2);
+            nonGeneric.Add("This is a string!");
+            nonGeneric.Add(true);
+
+            Console.WriteLine("==ArrayList Demo==");
+            //var sets the datatype of the variable during runtime
+            foreach (var element in nonGeneric)
+            {
+                Console.WriteLine(element.GetType());
+
+            }
         }
     }
 }
