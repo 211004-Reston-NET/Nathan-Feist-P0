@@ -2,13 +2,13 @@ using System;
 
 namespace UserInterface
 {
-    public class UserMenu : MenuInterface
-     {
+    public class OrderMenu : MenuInterface
+    {
         public void Menu()
         {
-            Console.WriteLine("=====Member's Rewards=====");
+            Console.WriteLine("=====Order Menu=====");
             Console.WriteLine("[0] Exit");
-            Console.WriteLine("[1] Become a Member");
+            Console.WriteLine("[1] Order an Item");
         }
         public MenuType userInput()
         {

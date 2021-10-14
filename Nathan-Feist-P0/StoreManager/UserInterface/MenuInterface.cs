@@ -9,7 +9,12 @@ namespace UserInterface
         UserMenu,
         LocationServices,
         OrderMenu,
-        ExitMenu,
+        Exit,
     
+    }
+    public interface MenuInterface
+    {
+        void Menu();
+        MenuType userInput();
     }
 }

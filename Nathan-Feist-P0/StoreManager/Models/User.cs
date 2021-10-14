@@ -22,7 +22,7 @@ namespace Models
             string user =
             $@"User ID: {ID}
             Name: {Name}
-            Shipping Address: {address}
+            Shipping Address: {Address}
             Email: {Email}
             Phone Number: {PhoneNumber}
             ";

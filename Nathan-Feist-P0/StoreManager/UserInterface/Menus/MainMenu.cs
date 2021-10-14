@@ -20,7 +20,7 @@ namespace UserInterface
             switch (userInput)
             {
                 case "0":
-                    return MenuType.ExitMenu;
+                    return MenuType.Exit;
                 case "1":
                     return MenuType.LocationServices;
                 case "2":
