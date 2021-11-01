@@ -7,276 +7,272 @@ using Model = Models;
 
 
 public class RepositoryCloud : IUsers, ILineItems, IOrders, IProducts, IStoreLocations, IRepository
-{
-    private Entity.PODatabase1Context _context;
-    public RepositoryCloud(Entity.PODatabase1Context p_context)
-    {
-        _context = p_context;
-    }
-
-
-    public Model.Users AddUsers(Model.Users p_users)
-    {
-        _context.Users.Add(
-            new Entity.User()
-            {
-                UserName = p_users.UserName,
-                UserAddress = p_users.UserAddress,
-                UserEmail = p_users.UserEmail,
-                UserPhone = p_users.UserPhone
-            }
-        );
-        _context.SaveChanges();
-
-        return p_users;
-
-
-    }
-
-    public List<Models.Users> GetAllUsers()
-    {
-        return _context.Users.Select(users =>
-            new Model.Users()
-            {
-                UserName = users.UserName,
-                UserAddress = users.UserAddress,
-                UserEmail = users.UserEmail,
-                UserPhone = users.UserPhone,
-                UserId = users.UserId
-
-
-            }
-        ).ToList();
-    }
-    public Users GetUsersById(int p_id)
-    {
-        Entity.User usersToFind = _context.Users.Find(p_id);
-
-        return new Model.Users()
         {
-            UserId = usersToFind.UserId,
-            UserName = usersToFind.UserName,
-            UserAddress = usersToFind.UserAddress,
-            UserEmail = usersToFind.UserEmail,
-            UserPhone = usersToFind.UserPhone,
-
-
-        };
-    }
-
-
-
-
-    public List<Review> GetAllReview(Users p_users)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public Model.Products AddProducts(Model.Products p_orders)
-    {
-        _context.Products.Add(
-            new Entity.Product()
+            private Entity.ShopDatabaseP0Context _context;
+            public RepositoryCloud(Entity.ShopDatabaseP0Context p_context) 
             {
-                ProductName = p_orders.ProductName,
-                ProductPrice = p_orders.ProductPrice,
-                ProductDescription = p_orders.ProductDescription,
-                ProductCategory = p_orders.ProductCategory,
+                _context = p_context;
             }
-        );
-        _context.SaveChanges();
-
-        return p_orders;
-
-    }
-    public List<Models.Products> GetAllProducts()
-    {
-        return _context.Products.Select(products =>
-            new Model.Products()
+            
+            
+            public Model.Users AddUsers(Model.Users p_users)
             {
-                ProductName = products.ProductName,
-                ProductPrice = products.ProductPrice,
-                ProductDescription = products.ProductDescription,
-                ProductCategory = products.ProductCategory,
-                ProductId = products.ProductId,
+                _context.Users.Add(
+                    new Entity.User()
+                    {
+                        UserName = p_users.UserName,
+                        UserAddress = p_users.UserAddress,
+                        UserEmail = p_users.UserEmail,
+                      //  UserPhone = p_users.UserPhone
+                    }
+                );
+                _context.SaveChanges();
+
+                return p_users;
+                
 
             }
 
-        ).ToList();
-    }
-
-    public List<Models.Products> GetAllProduct()
-    {
-        return _context.Products.Select(products =>
-                new Model.Products()
-                {
-                    ProductName = products.ProductName,
-                    ProductPrice = products.ProductPrice,
-                    ProductDescription = products.ProductDescription,
-                    ProductCategory = products.ProductCategory,
-                    ProductId = products.ProductId
+            public List<Models.Users> GetAllUsers()
+            {
+                return _context.Users.Select(users =>
+                    new Model.Users()
+                    {
+                        UserName = users.UserName,
+                        UserAddress = users.UserAddress,
+                        UserEmail = users.UserEmail,
+                       // UserPhone = users.UserPhone,
+                        UserId = users.UserId
 
 
-                }
-            ).ToList();
-    }
-
-    public Products GetProductsById(int p_id)
-    {
-        Entity.Product productsToFind = _context.Products.Find(p_id);
-
-        return new Model.Products()
+                    }
+                ).ToList(); 
+            }
+        public Users GetUsersById(int p_id)
         {
-            ProductId = productsToFind.ProductId,
-            ProductName = productsToFind.ProductName,
-            ProductPrice = productsToFind.ProductPrice,
-            ProductDescription = productsToFind.ProductDescription,
-            ProductCategory = productsToFind.ProductCategory,
+             Entity.User usersToFind = _context.Users.Find(p_id);
+            
+            return new Model.Users(){
+                UserId = usersToFind.UserId,
+                UserName = usersToFind.UserName,
+                UserAddress = usersToFind.UserAddress,
+                UserEmail = usersToFind.UserEmail,
+              //  UserPhone = usersToFind.UserPhone,
+               
+                
+            };
+        }
+      
+    
+    
 
-
-        };
-
-    }
-
-    public List<Review> GetAllReview(Products p_storeLocations)
-    {
-        throw new System.NotImplementedException();
-    }
-    public Model.LineItems AddLineItems(Model.LineItems p_lineItems)
-    {
-        _context.LineItems.Add(
-                new Entity.LineItem()
-                {
-                    ProductName = p_lineItems.ProductName,
-                    OrderStoreLocationsAddress = p_lineItems.StoreAddress,
-                    QuantityNumber = p_lineItems.ItemQuantity,
-                }
-               );
-        _context.SaveChanges();
-
-        return p_lineItems;
-    }
-
-    public List<LineItems> GetAllLineItems()
-    {
-        return _context.LineItems.Select(lineItems =>
-                new Model.LineItems()
-                {
-                    ProductName = lineItems.ProductName,
-                    StoreAddress = lineItems.OrderStoreLocationsAddress,
-                    ItemQuantity = lineItems.QuantityNumber,
-                    LineItemId = lineItems.LineItemId,
-
-
-                }
-            ).ToList();
-    }
-
-    public List<Review> GetAllReview(LineItems p_lineItems)
-    {
-        throw new System.NotImplementedException();
-    }
-
-
-    public LineItems GetLineItemsById(int p_id)
-    {
-        Entity.LineItem lineItemsToFind = _context.LineItems.Find(p_id);
-
-        return new Model.LineItems()
+        public List<Review> GetAllReview(Users p_users)
         {
-            LineItemId = lineItemsToFind.ProductId,
-            ProductName = lineItemsToFind.ProductName,
-            StoreAddress = lineItemsToFind.OrderStoreLocationsAddress,
-            ItemQuantity = lineItemsToFind.QuantityNumber,
+           throw new System.NotImplementedException();
+        }  
+        
+            public Model.Products AddProducts(Model.Products p_orders)
+            {
+                _context.Products.Add(
+                    new Entity.Product()
+                    {
+                        ProductName = p_orders.ProductName,
+                        ProductPrice = p_orders.ProductPrice,
+                        ProductDescription =p_orders.ProductDescription,
+                        ProductCategory =p_orders.ProductCategory,
+                    }
+                );
+                _context.SaveChanges();
 
-        };
-    }
+                return p_orders;
+                
+            }
+            public List<Models.Products> GetAllProducts()
+            {
+                return _context.Products.Select(products =>
+                    new Model.Products()
+                    {
+                        ProductName = products.ProductName,
+                        ProductPrice = products.ProductPrice,
+                        ProductDescription = products.ProductDescription,
+                        ProductCategory = products.ProductCategory,
+                        ProductId = products.ProductId,
 
-    public Orders AddOrders(Orders p_orders)
-    {
-        _context.StoreOrders.Add(
-                new Entity.StoreOrder()
-                {
-                    StoreLocationsAddress = p_orders.StoreAddress,
-                    TotalPrice = p_orders.TotalPrice,
+                    }
+                    
+                ).ToList();
+            }
 
-
-                }
-            );
-        _context.SaveChanges();
-
-        return p_orders;
-    }
-    public List<Orders> GetAllOrders()
-    {
-        return _context.StoreOrders.Select(orders =>
-                new Model.Orders()
-                {
-                    StoreAddress = orders.StoreLocationsAddress,
-                    TotalPrice = orders.TotalPrice,
-                    StoreOrderId = orders.StoreOrderId,
-
-
-                }
-            ).ToList();
-    }
-
-    public List<Review> GetAllReview(Orders p_orders)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    Orders IOrders.GetOrdersById(int p_Id)
-    {
-        Entity.StoreOrder ordersToFind = _context.StoreOrders.Find(p_Id);
-
-        return new Model.Orders()
+            public List<Models.Products> GetAllProduct()
         {
-            StoreOrderId = ordersToFind.StoreOrderId,
-            StoreAddress = ordersToFind.StoreLocationsAddress,
-            TotalPrice = ordersToFind.TotalPrice,
+            return _context.Products.Select(products =>
+                    new Model.Products()
+                    {
+                        ProductName = products.ProductName,
+                        ProductPrice = products.ProductPrice,
+                        ProductDescription = products.ProductDescription,
+                        ProductCategory = products.ProductCategory,
+                        ProductId = products.ProductId
 
+
+                    }
+                ).ToList(); 
+        }
+
+        public Products GetProductsById(int p_id)
+        {
+            Entity.Product productsToFind = _context.Products.Find(p_id);
+            
+            return new Model.Products(){
+                ProductId = productsToFind.ProductId,
+                ProductName = productsToFind.ProductName,
+                 ProductPrice = productsToFind.ProductPrice,
+                ProductDescription = productsToFind.ProductDescription,
+                ProductCategory = productsToFind.ProductCategory,
+               
+            
+             };
+            
+        }
+
+        public List<Review> GetAllReview(Products p_storeLocations)
+        {
+            throw new System.NotImplementedException();
+        }
+        public Model.LineItems AddLineItems(Model.LineItems p_lineItems)
+        {
+            _context.LineItems.Add(
+                    new Entity.LineItem()
+                    {
+                      //  ProductName = p_lineItems.ProductName,
+                       // OrderStoreAddress = p_lineItems.StoreAddress,
+                        QuantityNumber =p_lineItems.ItemQuantity,
+                    }
+                   );
+                _context.SaveChanges();
+
+                return p_lineItems;
+        }
+
+        public List<LineItems> GetAllLineItems()
+        {
+            return _context.LineItems.Select(lineItems =>
+                    new Model.LineItems()
+                    {
+                      //  ProductName = lineItems.ProductName,
+                      //  StoreAddress = lineItems.OrderStoreAddress,
+                        ItemQuantity = lineItems.QuantityNumber,
+                        LineItemId = lineItems.LineItemId,
+
+
+                    }
+                ).ToList(); 
+            }
+
+        public List<Review> GetAllReview(LineItems p_lineItems)
+        {
+            throw new System.NotImplementedException();
+        }
+
+
+        public LineItems GetLineItemsById(int p_id)
+        {
+          Entity.LineItem lineItemsToFind = _context.LineItems.Find(p_id);
+            
+            return new Model.LineItems(){
+                LineItemId = lineItemsToFind.ProductId,
+                //ProductName = lineItemsToFind.ProductName,
+               //  StoreAddress = lineItemsToFind.StoreAddress,
+                ItemQuantity = lineItemsToFind.QuantityNumber,
+               
         };
-    }
+        }
 
-    public StoreLocations AddStoreLocations(StoreLocations p_storeLocations)
-    {
-        _context.StoreLocations.Add(
-                new Entity.StoreLocation()
-                {
-                    StoreLocationName = p_storeLocations.StoreName,
-                    StoreLocationAddress = p_storeLocations.StoreAddress,
-                    StoreLocationPhone = p_storeLocations.StorePhone,
+        public Orders AddOrders(Orders p_orders)
+        {
+            _context.Orders.Add(
+                    new Entity.Order()
+                    {
+                  //      StoreAddress = p_orders.StoreAddress,
+                        TotalPrice = p_orders.TotalPrice,
+                    
+                    
+                    }
+                );
+                _context.SaveChanges();
 
-                }
-            );
-        _context.SaveChanges();
-
-        return p_storeLocations;
-    }
-
-    public List<StoreLocations> GetAllStoreLocations()
-    {
-        return _context.StoreLocations.Select(storeLocations =>
-                new Model.StoreLocations()
-                {
-                    StoreName = storeLocations.StoreName,
-                    StoreAddress = storeLocations.StoreAddress,
-                    StorePhone = storeLocations.StorePhone,
-                    StoreId = storeLocations.StoreId
+                return p_orders;
+        }
+        public List<Orders> GetAllOrders()
+        {
+            return _context.Orders.Select(orders =>
+                    new Model.Orders()
+                    {
+                    //    StoreAddress = orders.StoreAddress,
+                        TotalPrice = orders.TotalPrice,
+                        StoreOrderId = orders.StoreOrderId,
 
 
-                }
-            ).ToList();
-    }
+                    }
+                ).ToList(); 
+        }
 
-    public List<Review> GetAllReview(StoreLocations p_storeLocations)
-    {
-        throw new System.NotImplementedException();
-    }
+        public List<Review> GetAllReview(Orders p_orders)
+        {
+            throw new System.NotImplementedException();
+        }
 
-    public StoreLocations GetStoreLocationsById(int p_id)
-    {
-        throw new System.NotImplementedException();
-    }
+        Orders IOrders.GetOrdersById(int p_Id)
+        {
+            Entity.Order ordersToFind = _context.Orders.Find( p_Id);
+            
+            return new Model.Orders(){
+                StoreOrderId = ordersToFind.StoreOrderId,
+              //  StoreAddress = ordersToFind.StoreAddress,
+                 TotalPrice = ordersToFind.TotalPrice,
+               
+        };
+        }
 
-}
+        public StoreLocations AddStoreLocations(StoreLocations p_storeLocations)
+        {
+            _context.StoreLocations.Add(
+                    new Entity.StoreLocation()
+                    {
+                        StoreName = p_storeLocations.StoreName,
+                        StoreAddress = p_storeLocations.StoreAddress,
+                      //  StorePhone = p_storeLocations.StorePhone,
+                        
+                    }
+                );
+                _context.SaveChanges();
+
+                return p_storeLocations;
+        }
+
+        public List<StoreLocations> GetAllStoreLocations()
+        {
+            return _context.StoreLocations.Select(storeLocations =>
+                    new Model.StoreLocations()
+                    {
+                        StoreName = storeLocations.StoreName,
+                        StoreAddress = storeLocations.StoreAddress,
+                       // StorePhone = storeLocations.StorePhone,
+                        StoreId = storeLocations.StoreId
+
+
+                    }
+                ).ToList(); 
+        }
+
+        public List<Review> GetAllReview(StoreLocations p_storeLocations)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public StoreLocations GetStoreLocationsById(int p_id)
+        {
+            throw new System.NotImplementedException();
+        }
+
+    }  

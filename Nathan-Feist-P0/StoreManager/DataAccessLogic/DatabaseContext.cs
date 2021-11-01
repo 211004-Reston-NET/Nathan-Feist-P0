@@ -2,17 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-#nullable disable
 
-namespace userInterface.Entities
+
+namespace userInterface
 {
-    public partial class PODatabase1Context : DbContext
+    public partial class DatabaseContext 
     {
-        public PODatabase1Context()
+        public DatabaseContext(DbContextOptions<DatabaseContext> options)
         {
         }
 
-        public PODatabase1Context(DbContextOptions<PODatabase1Context> options)
+        public DatabaseContext(DbContextOptions<DatabaseContext> options)
             : base(options)
         {
         }
@@ -51,7 +51,7 @@ namespace userInterface.Entities
                     .IsUnicode(false)
                     .HasColumnName("user_name");
 
-                entity.Property(e => e.UserPhone).HasColumnName("User_phone");
+                entity.Property(e => e.UserPhone).HasColumnName("user_phone");
             });
 
             modelBuilder.Entity<LineItem>(entity =>
@@ -114,24 +114,24 @@ namespace userInterface.Entities
             {
                 entity.ToTable("StoreLocation");
 
-                entity.Property(e => e.StoreLocationId).HasColumnName("store_id");
+                entity.Property(e => e.StoreLocationId).HasColumnName("storeLocation_id");
 
                 entity.Property(e => e.StoreLocationAddress)
                     .IsRequired()
                     .HasMaxLength(50)
                     .IsUnicode(false)
-                    .HasColumnName("store_address");
+                    .HasColumnName("storeLocation_address");
 
                 entity.Property(e => e.StoreLocationName)
                     .IsRequired()
                     .HasMaxLength(50)
                     .IsUnicode(false)
-                    .HasColumnName("store_name");
+                    .HasColumnName("storeLocation_name");
 
-                entity.Property(e => e.StoreLocationPhone).HasColumnName("store_phone");
+                entity.Property(e => e.StoreLocationPhone).HasColumnName("storeLocation_phone");
             });
 
-            modelBuilder.Entity<Orders>(entity =>
+            modelBuilder.Entity<StoreOrder>(entity =>
             {
                 entity.ToTable("StoreOrder");
 

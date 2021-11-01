@@ -1,5 +1,5 @@
 
-
+   
 namespace userInterface
 
 {
@@ -11,34 +11,34 @@ namespace userInterface
 
         MainMenu,
         ExitMenu,
-
+       
         // Users
         UserMenu,
         AddUsers,
         ShowUsers,
         CurrentUsers,
-
+        
 
         //LineItems
         LineItemsMenu,
         AddLineItems,
         ShowLineItems,
         CurrentLineItems,
-
-        // Orders
+        
+         // Orders
         OrdersMenu,
         AddOrders,
         ShowOrders,
         CurrentOrders,
-
-        // Products
+        
+         // Products
         ProductsMenu,
         AddProducts,
         ShowProducts,
         CurrentProducts,
         ProductsSearch,
 
-        // StoreLocations
+         // StoreLocations
         StoreLocationsMenu,
         AddStoreLocations,
         ShowStoreLocations,
@@ -63,9 +63,10 @@ namespace userInterface
         /// </summary>
         /// <returns>This method should return a menu that the user will go to next</returns>
         MenuType YourChoice();
-
+        
     }
-}
+  }
 
 
-
+    
+      
