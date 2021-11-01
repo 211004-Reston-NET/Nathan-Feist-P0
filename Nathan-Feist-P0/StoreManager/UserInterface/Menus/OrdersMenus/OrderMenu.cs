@@ -9,6 +9,7 @@ namespace UserInterface
             Console.WriteLine("=====Order Menu=====");
             Console.WriteLine("[0] Exit");
             Console.WriteLine("[1] Order an Item");
+            Console.WriteLine("====================");
         }
         public MenuType userInput()
         {
@@ -23,6 +24,7 @@ namespace UserInterface
                 default:
                     Console.WriteLine("=====YOU HAVE MADE AN INVALID SELECTION=====");
                     Console.WriteLine("Please hit [enter] to continue");
+                    
                     Console.ReadLine();
                     return MenuType.MainMenu;
             }
