@@ -7,9 +7,14 @@ namespace DataAccessLogic.Entities
 {
     public partial class Order
     {
-        public int StoreOrderId { get; set; }
+        public int OrderId { get; set; }
         public decimal TotalPrice { get; set; }
-        public int StoreLocationId { get; set; }
-        public int UsersId { get; set; }
+        public int LineItemId { get; set; }
+        public int UserId { get; set; }
+        public Int32 StoreAddress { get; set; }
+
+        public virtual LineItem LineItem { get; set; }
+        public virtual StoreLocation StoreAddressNavigation { get; set; }
+        public virtual User User { get; set; }
     }
 }

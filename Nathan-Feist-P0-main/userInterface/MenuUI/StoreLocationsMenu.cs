@@ -12,13 +12,13 @@ namespace userInterface
         */
         public void Menu()
         {
-            Console.WriteLine("    Welcome to the StoreLocations Menu!  ");
+            Console.WriteLine("------Location Services------");
             Console.WriteLine("---------------------------------------");
             Console.WriteLine("-------- StoreLocations Menu Choices--------");
             Console.WriteLine("[1] - Add New StoreLocations: ");
             Console.WriteLine("[2] - View A List of StoreLocations: ");
             Console.WriteLine("[3] - Search For A StoreLocation: ");
-            Console.WriteLine("[x] - Go back to The Main Menu: ");
+            Console.WriteLine("[x] - Return to The Main Menu: ");
             Console.WriteLine("---------------------------------------");
         }
 

@@ -20,11 +20,11 @@ namespace userInterface
             Console.WriteLine("This is the search result");
             foreach (Orders orders in listOfOrders)
             {
-                Console.WriteLine("====================");
+                Console.WriteLine("---------------------------------------");
                 Console.WriteLine(orders);
-                Console.WriteLine("====================");
+                Console.WriteLine("---------------------------------------");
             }
-            Console.WriteLine("[0] - Go Back");
+            Console.WriteLine("[x] - Go Back");
         }
 
         public MenuType YourChoice()
@@ -33,7 +33,7 @@ namespace userInterface
 
             switch (userChoice)
             {
-                case "0":
+                case "x":
                     return MenuType.ShowOrders;
                 default:
                     Console.WriteLine("Please input a valid response!");

@@ -17,13 +17,15 @@ namespace userInterface
         public void Menu()
         {
             Console.WriteLine("This is the search result");
-            Console.WriteLine("====================");
+            Console.WriteLine("---------------------------------------");
             Console.WriteLine(_currentStoreLocations);
-            // need to add if no storelocations is not found
-            Console.WriteLine("====================");
+            Console.WriteLine("---------------------------------------");
+           
+            Console.WriteLine("[1] - Search Name Of StoreLocations: "); 
             Console.WriteLine("[x] - Go Back: ");
-            Console.WriteLine("[1] - Search Name Of StoreLocations: ");
+            Console.WriteLine("---------------------------------------");
         }
+
 
         public MenuType YourChoice()
         {
@@ -36,7 +38,7 @@ namespace userInterface
                 case "1":
                     Console.WriteLine("StoreLocations to Search For: ");
                     _currentStoreLocations.StoreName = Console.ReadLine();
-                    _currentStoreLocations = _storeLocationsBL.GetStoreLocations(_currentStoreLocations.StoreName); 
+                    _currentStoreLocations = _storeLocationsBL.GetStoreLocations(_currentStoreLocations.StoreName);
                     return MenuType.CurrentStoreLocations;
                 default:
                     Console.WriteLine("Please input a valid response!");

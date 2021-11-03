@@ -17,13 +17,15 @@ namespace userInterface
         public void Menu()
         {
             Console.WriteLine("This is the search result");
-            Console.WriteLine("====================");
+            Console.WriteLine("---------------------------------------");
             Console.WriteLine(_currentUser);
-            // need to add if no user is found
-            Console.WriteLine("====================");
+            Console.WriteLine("---------------------------------------");
+            Console.WriteLine("[1] - Search By Name Of User: ");
+            Console.WriteLine("[2] - Search By User Id:");
             Console.WriteLine("[x] - Go Back: ");
-            Console.WriteLine("[1] - Search Name Of User: ");
-            
+            Console.WriteLine("---------------------------------------");
+
+
         }
 
         public MenuType YourChoice()
@@ -35,11 +37,15 @@ namespace userInterface
                 case "x":
                     return MenuType.UserMenu;
                 case "1":
-                    Console.WriteLine("User to Search For: ");
+                    Console.WriteLine("Enter a User's Name: ");
                     _currentUser.UserName = Console.ReadLine();
-                    _currentUser = _usersBL.GetUsers(_currentUser.UserName); 
+                    _currentUser = _usersBL.GetUsers(_currentUser.UserName);
                     return MenuType.CurrentUsers;
-                
+                case "2":
+                    Console.WriteLine("Enter a User's ID:");
+                    _currentUser.UserId = Int32.Parse(Console.ReadLine());
+                    _currentUser = _usersBL.GetUsersById(_currentUser.UserId);
+                    return MenuType.CurrentUsers;
                 default:
                     Console.WriteLine("Please input a valid response!");
                     Console.WriteLine("Press Enter to continue");

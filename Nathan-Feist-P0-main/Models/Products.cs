@@ -26,7 +26,7 @@ namespace Models
                 if (!Regex.IsMatch(value, @"^[A-Za-z .]+$"))
                 {
                     //Will give the user an exception whenever you try to set the city field with a number
-                    throw new Exception("Customer Name can only hold letters!");
+                    throw new Exception("User Name can only hold letters!");
                 }
                 _productName = value;
             }
@@ -41,7 +41,7 @@ namespace Models
                 if (!Regex.IsMatch(value, @"^[A-Za-z .]+$"))
                 {
                     //Will give the user an exception whenever you try to set the city field with a number
-                    throw new Exception("Customer Name can only hold letters!");
+                    throw new Exception("User Name can only hold letters!");
                 }
                 _productDescription = value;
             }
@@ -55,7 +55,7 @@ namespace Models
                 if (!Regex.IsMatch(value, @"^[A-Za-z .]+$"))
                 {
                     //Will give the user an exception whenever you try to set the city field with a number
-                    throw new Exception("Customer Name can only hold letters!");
+                    throw new Exception("User Name can only hold letters!");
                 }
                 _productCategory = value;
             }

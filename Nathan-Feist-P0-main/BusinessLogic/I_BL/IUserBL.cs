@@ -40,6 +40,5 @@ namespace BusinessLogic
         /// </summary>
         /// <returns>It will return a list of reviews</returns>
         List<Review> GetAllReview(Users p_users);
-        
-        }
+    }
     }

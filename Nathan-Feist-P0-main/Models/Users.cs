@@ -91,7 +91,7 @@ namespace Models
 
         public override string ToString()
         {
-            return $"Customer Name: {UserName} \nCustomer Address: {UserAddress} \nCustomer Email: {UserEmail} \nCustomer Phone: {UserPhone}";
+            return $"User Name: {UserName} \nUser Address: {UserAddress} \nUser Email: {UserEmail} \nUser Phone: {UserPhone}";
 
 
 

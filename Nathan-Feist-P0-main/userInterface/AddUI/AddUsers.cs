@@ -17,19 +17,19 @@ namespace userInterface
         public void Menu()
         {
             Console.WriteLine("Welcome To Add A user! ");
-            Console.WriteLine("------------------------------------");
+            Console.WriteLine("---------------------------------------");
             Console.WriteLine($"Name: {_users.UserName}");
             Console.WriteLine($"Address: {_users.UserAddress}");
             Console.WriteLine($"Phone: {_users.UserPhone}");
             Console.WriteLine($"Email: {_users.UserEmail}");
-            Console.WriteLine("------------------------------------");
+            Console.WriteLine("---------------------------------------");
             Console.WriteLine("[1] - Please Enter Name: ");
             Console.WriteLine("[2] - Please Enter Address:");
             Console.WriteLine("[3] - Please Enter Phone Number:");
             Console.WriteLine("[4] - Please Enter Email:");
             Console.WriteLine("[5] - Save user");
-            Console.WriteLine("[6] - Show A List of Order Items");
             Console.WriteLine("[x] - Return to users Menu");
+            Console.WriteLine("---------------------------------------");
         }
 
         public MenuType YourChoice()
@@ -54,16 +54,12 @@ namespace userInterface
                     _users.UserEmail = Console.ReadLine();
                     return MenuType.AddUsers;
                 case "5":
+                
                     _usersBL.AddUsers(_users);
                     Console.WriteLine("User Has Been Added");
                     Console.WriteLine("Please Press Enter! ");
                     Console.ReadLine();
                     return MenuType.UserMenu;
-                case "6":
-                    Console.WriteLine("Get A List Of Users Items:");
-                    _users.Orders = new List<Orders>();
-                    return MenuType.ShowOrders;
-
                 case "x":
                     return MenuType.UserMenu;
                 default:
