@@ -21,9 +21,9 @@ namespace userInterface
 
             foreach (Users users in listOfUsers)
             {
-                Console.WriteLine("====================");
+                Console.WriteLine("---------------------------------------");
                 Console.WriteLine(users);
-                Console.WriteLine("====================");
+                Console.WriteLine("---------------------------------------");
             }
             Console.WriteLine("[1] - Search for a User");
             Console.WriteLine("[x] - Go Back");

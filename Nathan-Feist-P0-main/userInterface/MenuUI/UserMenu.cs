@@ -35,9 +35,7 @@ namespace userInterface
                     return MenuType.ShowUsers;
                 //This case will search for a user
                 case "3":
-                    return MenuType.CurrentUsers;
-                //case "4":
-                  //  return MenuType.ProductsMenu;      
+                    return MenuType.CurrentUsers;    
                 case "x":
                     return MenuType.MainMenu;
                 default:

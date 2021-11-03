@@ -15,15 +15,15 @@ namespace userInterface
         }
         public void Menu()
         {
-            Console.WriteLine("-----List of StoreLocations-----");
+            Console.WriteLine("-----List of Our Locations-----");
             Console.WriteLine("--------------------------------");
             List<StoreLocations> listOfStoreLocations = _storeLocationsBL.GetAllStoreLocations();
 
             foreach (StoreLocations storeLocations in listOfStoreLocations)
             {
-                Console.WriteLine("====================");
+                Console.WriteLine("---------------------------------------");
                 Console.WriteLine(storeLocations);
-                Console.WriteLine("====================");
+                Console.WriteLine("---------------------------------------");
             }
             Console.WriteLine("[1] - Search for a StoreLocation");
             Console.WriteLine("[2] - Choose Which Store you would like to buy from");

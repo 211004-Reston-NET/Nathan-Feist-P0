@@ -21,9 +21,9 @@ namespace userInterface
 
             foreach (LineItems lineItems in listOfLineItems)
             {
-                Console.WriteLine("====================");
+                Console.WriteLine("---------------------------------------");
                 Console.WriteLine(lineItems);
-                Console.WriteLine("====================");
+                Console.WriteLine("---------------------------------------");
             }
             Console.WriteLine("[1] - Search for a Line Item");
             Console.WriteLine("[x] - Go Back");

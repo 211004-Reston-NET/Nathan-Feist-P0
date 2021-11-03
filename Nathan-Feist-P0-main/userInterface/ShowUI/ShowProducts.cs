@@ -20,12 +20,12 @@ namespace userInterface
 
             foreach (Products products in listOfProducts)
             {
-                Console.WriteLine("====================");
+                Console.WriteLine("---------------------------------------");
                 Console.WriteLine(products);
-                Console.WriteLine("====================");
+                Console.WriteLine("---------------------------------------");
             }
-            Console.WriteLine("[x] - Search for a Product");
-            Console.WriteLine("[0] - Go Back");
+            Console.WriteLine("[1] - Search for a Product");
+            Console.WriteLine("[x] - Go Back");
         }
 
         public MenuType YourChoice()
