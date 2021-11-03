@@ -10,9 +10,9 @@ namespace Models
         private int _orderId;
         private string _storeAddress;
         private decimal _totalPrice;
-        public int CustomerId { get; set; }
+        public int UserId { get; set; }
         private List<LineItems> _lineItems = new List<LineItems>();
-        public int StoreOrderId
+        public int OrderId
         {
             get { return _orderId; }
             set { _orderId = value; }
@@ -50,13 +50,12 @@ namespace Models
 
         public override string ToString()
         {
-            string Customers =
-            $@"Store Address: {StoreAddress}
-                            Total Price: {TotalPrice}
-                            List of Line Items: {LineItems}
-                            ";
+            string Users =
+                    $@"Store Address: {StoreAddress}
+                    Total Price: {TotalPrice}
+                    List of Line Items: {LineItems}";
 
-            return Customers;
+            return Users;
         }
 
     }

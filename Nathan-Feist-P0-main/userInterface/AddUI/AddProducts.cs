@@ -16,18 +16,19 @@ namespace userInterface
              public void Menu()
         {
             Console.WriteLine("Welcome To Add A Product! ");
-            Console.WriteLine("---------------------------\n");
+            Console.WriteLine("---------------------------------------");
             Console.WriteLine($"Product Name: {_products.ProductName}");
             Console.WriteLine($"Product Price: {_products.ProductPrice}");
             Console.WriteLine($"Product Description: {_products.ProductDescription}");
             Console.WriteLine($"Product Category: {_products.ProductCategory}");
-            Console.WriteLine("------------------------------------\n");
+            Console.WriteLine("---------------------------------------");
             Console.WriteLine("[1] - Please Enter A  Product Name: ");
             Console.WriteLine("[2] - Please Enter A Product Price:");
             Console.WriteLine("[3] - Please Enter A Product Description:");
             Console.WriteLine("[4] = Please Enter A Product Category:");
             Console.WriteLine("[5] - Save A Product");
             Console.WriteLine("[x] - Return to Products Menu");
+            Console.WriteLine("---------------------------------------");
         }
 
         public MenuType YourChoice()

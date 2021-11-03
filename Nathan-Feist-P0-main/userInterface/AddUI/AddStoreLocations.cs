@@ -20,16 +20,17 @@ namespace userInterface
             public void Menu()
             {
                 Console.WriteLine("Welcome To Add A StoreLocations! ");
-                Console.WriteLine("------------------------------------");
+                Console.WriteLine("---------------------------------------");
                 Console.WriteLine($"Name: {_storeLocations.StoreName}");
                 Console.WriteLine($"Address: {_storeLocations.StoreAddress}");
                 Console.WriteLine($"Phone: {_storeLocations.StorePhone}");
-                Console.WriteLine("------------------------------------");
+                Console.WriteLine("---------------------------------------");
                 Console.WriteLine("[1] - Please Enter Name: ");
                 Console.WriteLine("[2] - Please Enter Address: ");
                 Console.WriteLine("[3] - Please Enter Phone Number: ");
                 Console.WriteLine("[4] - Save A StoreLocations: ");
                 Console.WriteLine("[x] - Go Back: ");
+                Console.WriteLine("---------------------------------------");
             }
 
             public MenuType YourChoice()
