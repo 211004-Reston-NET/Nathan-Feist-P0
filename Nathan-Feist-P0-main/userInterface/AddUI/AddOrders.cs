@@ -10,6 +10,8 @@ namespace userInterface
         
     
         private static Orders _orders = new Orders();
+        private static Products _product = new Products();
+        private static Users _users = new Users();
         private IOrdersBL _ordersBL;
          
         public AddOrders(IOrdersBL p_ordersBL)
@@ -18,17 +20,16 @@ namespace userInterface
         }
                public void Menu()
         {
-            Console.WriteLine("Make A New Order! ");
+            Console.WriteLine("Make A New Order ");
             Console.WriteLine("---------------------------------------");
-            Console.WriteLine($"Address: {_orders.StoreAddress}");
-            Console.WriteLine($"Phone: {_orders.TotalPrice}");
+            Console.WriteLine($"Product Name: {_product.ProductName}"); 
+            Console.WriteLine($"Price: {_orders.TotalPrice}");
+            Console.WriteLine($"Address: {_users.UserAddress}");
             Console.WriteLine("---------------------------------------");
-            Console.WriteLine("[1] - Please Enter Name: ");
-            Console.WriteLine("[2] - Please Enter Address:");
-            Console.WriteLine("[3] - Please Enter Phone Number:");
-            Console.WriteLine("[4] - Please Enter Email:");
-            Console.WriteLine("[5] - Save User");
-            Console.WriteLine("[6] - Show A List of Order Items");
+            Console.WriteLine("[1] - Please Enter Product Name: ");
+            Console.WriteLine("[2] - It cost:");
+            Console.WriteLine("[3] - Please Enter Shipping Address:");
+            Console.WriteLine("[4] - Save Order");
             Console.WriteLine("[x] - Return to Users Menu");
             Console.WriteLine("---------------------------------------");
         } 
@@ -39,25 +40,23 @@ namespace userInterface
             switch (userChoice)
             {
                 case "1":
-                     Console.WriteLine("Please Enter Users Name:");
-                     _orders.StoreAddress = Console.ReadLine();
+                     Console.WriteLine("Please Enter The Product Name:");
+                     _product.ProductName = Console.ReadLine();
                      return MenuType.AddOrders;
                 case "2":
-                     Console.WriteLine("Please Enter Users Address:");
+                     Console.WriteLine("The Product cost:");
                      _orders.TotalPrice = Int32.Parse( Console.ReadLine());
                      return MenuType.AddOrders;
-                
-                case "5":
+                case "3":
+                    Console.WriteLine("Please Enter Your Shipping Address");
+                    _users.UserAddress = Console.ReadLine();
+                    return MenuType.AddOrders;
+                case "4":
                      _ordersBL.AddOrders(_orders);
-                     Console.WriteLine("User Has Been Added");
+                     Console.WriteLine("Order Has Been Saved");
                      Console.WriteLine("Please Press Enter! ");
                      Console.ReadLine();
                      return MenuType.OrdersMenu;
-                case "6":
-                     Console.WriteLine("Get A List Of Users Items:");
-                     _orders.Order = new List<Orders>();
-                     return MenuType.ShowOrders;
-                   
                 case "x":
                      return MenuType.OrdersMenu;
                 default:

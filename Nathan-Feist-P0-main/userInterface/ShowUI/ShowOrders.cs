@@ -20,9 +20,9 @@ namespace userInterface
 
             foreach (Orders orders in listOfOrders)
             {
-                Console.WriteLine("====================");
+                Console.WriteLine("---------------------------------------");
                 Console.WriteLine(orders);
-                Console.WriteLine("====================");
+                Console.WriteLine("---------------------------------------");
             }
             Console.WriteLine("[1] - Search for a Order");
             Console.WriteLine("[x] - Go Back");
