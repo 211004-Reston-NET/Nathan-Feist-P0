@@ -14,10 +14,10 @@ namespace userInterface
         {
             Console.WriteLine("------Location Services------");
             Console.WriteLine("---------------------------------------");
-            Console.WriteLine("-------- StoreLocations Menu Choices--------");
-            Console.WriteLine("[1] - Add New StoreLocations: ");
-            Console.WriteLine("[2] - View A List of StoreLocations: ");
-            Console.WriteLine("[3] - Search For A StoreLocation: ");
+            Console.WriteLine("-------- Store Location Menu Choices--------");
+            Console.WriteLine("[1] - Add A New Store Location: ");
+            Console.WriteLine("[2] - View A List of Store Locations: ");
+            Console.WriteLine("[3] - Search For A Store Location: ");
             Console.WriteLine("[x] - Return to The Main Menu: ");
             Console.WriteLine("---------------------------------------");
         }
