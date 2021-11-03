@@ -15,11 +15,11 @@ namespace userInterface
             Console.WriteLine("Main Menu");
             Console.WriteLine("--------------------------------");
             Console.WriteLine("What Would You Like To Do? ");
-            Console.WriteLine("[1] - View Users Menu: ");
-            Console.WriteLine("[2] - View Line Items: ");
-            Console.WriteLine("[3] - Order a Product: ");
-            Console.WriteLine("[4] - View Products: ");
-            Console.WriteLine("[5] - Find a Location Near You: ");
+            Console.WriteLine("[1] - User Menu: ");
+            Console.WriteLine("[2] - Order Products: ");
+            Console.WriteLine("[3] - View Products: ");
+            Console.WriteLine("[4] - Find a Location Near You: ");
+            Console.WriteLine("[5] - View Line Items: ");
             Console.WriteLine("[x] - Exit: ");
             Console.WriteLine("--------------------------------");
         }
@@ -32,13 +32,13 @@ namespace userInterface
                 case "1":
                     return MenuType.UserMenu;
                 case "2":
-                    return MenuType.LineItemsMenu;
-                case "3":
                     return MenuType.OrdersMenu;
-                case "4":
+                case "3":
                     return MenuType.ProductsMenu;
-                case "5":
+                case "4":
                     return MenuType.StoreLocationsMenu;
+                case "5":
+                    return MenuType.LineItemsMenu;
                 case "x":
                     return MenuType.Exit;
                 default:

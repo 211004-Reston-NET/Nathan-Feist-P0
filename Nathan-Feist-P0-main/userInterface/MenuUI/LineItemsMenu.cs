@@ -17,7 +17,7 @@ namespace userInterface
             Console.WriteLine("Would You Like To... ");
             Console.WriteLine("[1] Add New Line Item: ");
             Console.WriteLine("[2] View All Inventory: ");
-            Console.WriteLine("[3] Order an Item For Restock: ");
+            Console.WriteLine("[3] Search For Line Item: ");
             Console.WriteLine("[x] Return to The Main Menu");
             Console.WriteLine("---------------------------------------");
         }
@@ -32,7 +32,7 @@ namespace userInterface
                 case "2":
                     return MenuType.ShowLineItems;
                 case "3":
-                    return MenuType.AddOrders;     
+                    return MenuType.CurrentLineItems;     
                 case "x":
                     return MenuType.MainMenu;
                 default:

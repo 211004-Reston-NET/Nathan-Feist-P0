@@ -15,7 +15,7 @@ namespace userInterface
         }
              public void Menu()
         {
-            Console.WriteLine("Welcome To Add A Product! ");
+            Console.WriteLine("Add A Product! ");
             Console.WriteLine("---------------------------------------");
             Console.WriteLine($"Product Name: {_products.ProductName}");
             Console.WriteLine($"Product Price: {_products.ProductPrice}");

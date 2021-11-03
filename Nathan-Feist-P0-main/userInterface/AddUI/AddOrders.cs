@@ -18,7 +18,7 @@ namespace userInterface
         }
                public void Menu()
         {
-            Console.WriteLine("Welcome To Add A Order! ");
+            Console.WriteLine("Make A New Order! ");
             Console.WriteLine("---------------------------------------");
             Console.WriteLine($"Address: {_orders.StoreAddress}");
             Console.WriteLine($"Phone: {_orders.TotalPrice}");
