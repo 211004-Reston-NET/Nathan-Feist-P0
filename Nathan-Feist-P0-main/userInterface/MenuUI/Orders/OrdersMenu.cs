@@ -3,7 +3,7 @@ using System;
 namespace userInterface
 {
     //The ":" syntax is used to indicate that you will inherit another class, interface, or abstract class
-    public class StoreLocationsMenu : IMenu
+    public class OrdersMenu : IMenu
     {
         /*
             Since MainMenu has inherited IMenu, it will have all the methods we have created
@@ -12,13 +12,13 @@ namespace userInterface
         */
         public void Menu()
         {
-            Console.WriteLine("------Location Services------");
+            Console.WriteLine("------Orders------");
             Console.WriteLine("---------------------------------------");
-            Console.WriteLine("-------- StoreLocations Menu Choices--------");
-            Console.WriteLine("[1] - Add New StoreLocations: ");
-            Console.WriteLine("[2] - View A List of StoreLocations: ");
-            Console.WriteLine("[3] - Search For A StoreLocation: ");
-            Console.WriteLine("[x] - Return to The Main Menu: ");
+            Console.WriteLine("What would you like to do next? ");
+            Console.WriteLine("[1] Make A New Order: ");
+            Console.WriteLine("[2] View Past Orders: ");
+            Console.WriteLine("[3] Add Item To Shopping Cart");
+            Console.WriteLine("[x] Return to The Main Menu");
             Console.WriteLine("---------------------------------------");
         }
 
@@ -28,18 +28,18 @@ namespace userInterface
             switch (userChoice)
             {
                 case "1":
-                    return MenuType.AddStoreLocations;
+                    return MenuType.AddOrders;
                 case "2":
-                    return MenuType.ShowStoreLocations;
+                    return MenuType.ShowOrders;
                 case "3":
-                    return MenuType.CurrentStoreLocations;   
+                    return MenuType.AddToOrder;
                 case "x":
-                    return MenuType.MainMenu; 
+                    return MenuType.MainMenu;
                 default:
                     Console.WriteLine("Please input a valid response!");
                     Console.WriteLine("Press Enter to continue");
                     Console.ReadLine();
-                    return MenuType.StoreLocationsMenu;
+                    return MenuType.OrdersMenu;
             }
         }
     }

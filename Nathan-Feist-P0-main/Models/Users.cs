@@ -17,6 +17,7 @@ namespace Models
         private List<Orders> _orders = new List<Orders>();
 
 
+
         //This is a property that uses the field called _name
         public int UserId
         {
@@ -56,46 +57,32 @@ namespace Models
         {
             get { return _userPhone; }
             set
-            {
-                //Main idea - this Regex will find me any number inside of my string
-                if (!Regex.IsMatch(value, @"^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$"))
+                        {
+                if (!Regex.IsMatch(value, @"\(?\d{3}\)?-? *\d{3}-? *-?\d{4}"))
                 {
-                    //Will give the user an exception whenever you try to set the city field with a number
-                    throw new Exception("Address can only hold letters and Numbers!");
+                    throw new Exception("Invaild Phone Number Format!");
                 }
                 _userPhone = value;
-            }
+            }       
         }
         public string UserEmail
         {
             get { return _userEmail; }
             set
             {
-                //Main idea - this Regex will find me any number inside of my string
-                if (!Regex.IsMatch(value, @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$"))
+                if (!Regex.IsMatch(value, @"^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"))
                 {
-                    //Will give the user an exception whenever you try to set the city field with a number
-                    throw new Exception("Address can only hold letters and Numbers!");
+                    throw new Exception("Invaild E-Mail Address!");
                 }
                 _userEmail = value;
             }
         }
 
-        public List<Orders> Orders
-        {
-            get { return _orders; }
-            set { _orders = value; }
-        }
-
-        public string Password { get; set; }
+        public List<Orders> Orders { get { return _orders; } set { _orders = value; } }
 
         public override string ToString()
         {
-            return $"User Name: {UserName} \nUser Address: {UserAddress} \nUser Email: {UserEmail} \nUser Phone: {UserPhone}";
-
-
-
-
+            return $"CustomerID: {UserId}\n Name: {UserName}\nAddress: {UserAddress}\nE-mail: {UserEmail}\nPhone: {UserPhone}";
         }
 
 

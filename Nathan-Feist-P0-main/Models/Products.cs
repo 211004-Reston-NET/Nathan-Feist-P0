@@ -1,15 +1,19 @@
 using System;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 namespace Models
 {
     public class Products
     {
+        
+        
         private int _productId;
         private string _productName;
         private decimal _productPrice;
         private string _productDescription;
         private string _productCategory;
+        private string _productQuantity;
 
         //This is a property that uses the field called _name
         public int ProductId
@@ -65,14 +69,17 @@ namespace Models
             get { return _productPrice; }
             set { _productPrice = value; }
         }
+        
 
         public override string ToString()
         {
             return $"Name: {ProductName} \nPrice: {ProductPrice} \nDescription: {ProductDescription} \nCategory: {ProductCategory}";
         }
 
+        
+
     }
 
-
+   
 }
 
