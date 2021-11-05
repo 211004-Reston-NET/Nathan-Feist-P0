@@ -51,7 +51,7 @@ namespace userInterface
             Console.WriteLine($"User Name: {_users.UserName}");
             Console.WriteLine($"Product Name: {_products.ProductName}");
             Console.WriteLine($"Product Price:{_products.ProductPrice}");
-            //Console.WriteLine($"Stock: {_products.ProductQuantity}");
+            Console.WriteLine($"Stock: {_products.ProductQuantity}");
             Console.WriteLine($"Amount To Purchas: {_lineItems.ItemQuantity}");
             Console.WriteLine($"Store Name: {_store.StoreName}");
             Console.WriteLine($"Address: {_store.StoreAddress}");
@@ -114,7 +114,7 @@ namespace userInterface
                     _order.ProductPrice = _products.ProductPrice;
                     _order.ItemQuantity = _lineItems.ItemQuantity;
 
-                    _products.ProductQuantity = _products.ProductQuantity - _lineItems.ItemQuantity;
+                    _products.ProductQuantity = _products.ProductQuantity - _order.ItemQuantity;
 
 
                     _ordersBL.AddOrders(_order);

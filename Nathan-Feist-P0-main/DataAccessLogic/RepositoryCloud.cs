@@ -270,6 +270,7 @@ public class RepositoryCloud : IUsers, ILineItems, IOrders, IProducts, IStoreLoc
                 {
                     StoreName = p_storeLocations.StoreName,
                     StoreAddress = p_storeLocations.StoreAddress,
+                    StoreId = p_storeLocations.StoreId,
                     StorePhone = p_storeLocations.StorePhone,
 
                 }
