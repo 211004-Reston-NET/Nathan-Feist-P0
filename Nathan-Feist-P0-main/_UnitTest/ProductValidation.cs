@@ -19,21 +19,7 @@ namespace UnitTest
         [InlineData("F@@tolkjh")]
         [InlineData("%*&@*&")]
        
-        public void ProductNameThrowsExceptionOnInvalid(string input)
-        {
-            Assert.Throws<Exception>(() => testProduct.ProductName = input);
-        }
-        [Fact]
-        public void ProductDescriptionIsValid()
-        {
-            var name = "Officially licensed NFL football";
-            testProduct.ProductDescription = name;
-            Assert.NotNull(testProduct.ProductDescription);
-            Assert.Equal(name, testProduct.ProductDescription);
-        }
-        [Theory]
-        [InlineData("F@@tolkjh")]
-        [InlineData("%*&@*&")]
+       
        
         public void ProductDescriptionThrowsExceptionOnInvalid(string input)
         {
