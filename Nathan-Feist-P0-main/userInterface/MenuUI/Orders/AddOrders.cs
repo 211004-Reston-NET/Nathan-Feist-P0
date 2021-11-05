@@ -37,9 +37,8 @@ namespace userInterface
             Console.WriteLine("---------------------------------------");
             Console.WriteLine($"Order ID:{_orders.OrderId}");
            
-            Console.WriteLine($"User ID: {_users.UserId}");
+        
             Console.WriteLine($"User Name: {_users.UserName}");
-            Console.WriteLine($"Product Id: {_products.ProductId}");
             Console.WriteLine($"Product Name: {_products.ProductName}");
             Console.WriteLine($"Product Price:{_products.ProductPrice}");
             Console.WriteLine($"Quantity: {_lineItems.ItemQuantity}");
@@ -70,6 +69,8 @@ namespace userInterface
                     Console.WriteLine("Enter Customer ID");
                     _users.UserId = Int32.Parse(Console.ReadLine());
                     _users = _usersBL.GetUsersById(_users.UserId);
+
+                   
 
                     
                     return MenuType.AddOrders;

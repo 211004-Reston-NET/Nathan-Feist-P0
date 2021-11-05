@@ -45,6 +45,10 @@ namespace DataAccessLogic.Entities
 
                 entity.Property(e => e.ProductPrice).HasColumnType("decimal(18, 0)");
 
+                entity.Property(e => e.StoreAddress)
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
                 entity.Property(e => e.TotalPrice).HasColumnType("decimal(18, 0)");
 
                 entity.Property(e => e.UserName)

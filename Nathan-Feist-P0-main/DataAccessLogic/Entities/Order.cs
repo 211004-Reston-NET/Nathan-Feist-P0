@@ -9,7 +9,7 @@ namespace DataAccessLogic.Entities
     {
         public int OrderId { get; set; }
         public decimal TotalPrice { get; set; }
-        public int StoreAddress { get; set; }
+        public string StoreAddress { get; set; }
         public string UserName { get; set; }
         public string ProductName { get; set; }
         public decimal ProductPrice { get; set; }
