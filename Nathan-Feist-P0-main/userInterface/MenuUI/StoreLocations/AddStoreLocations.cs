@@ -19,8 +19,10 @@ namespace userInterface
 
             public void Menu()
             {
+                Console.Clear();
                 Console.WriteLine("Add A Store! ");
                 Console.WriteLine("---------------------------------------");
+                Console.WriteLine($"Store ID:{_storeLocations.StoreId}");
                 Console.WriteLine($"Name: {_storeLocations.StoreName}");
                 Console.WriteLine($"Address: {_storeLocations.StoreAddress}");
                 Console.WriteLine($"Phone: {_storeLocations.StorePhone}");

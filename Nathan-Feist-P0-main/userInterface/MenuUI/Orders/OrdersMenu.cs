@@ -12,6 +12,8 @@ namespace userInterface
         */
         public void Menu()
         {
+
+            Console.Clear();
             Console.WriteLine("------Orders------");
             Console.WriteLine("---------------------------------------");
             Console.WriteLine("What would you like to do next? ");

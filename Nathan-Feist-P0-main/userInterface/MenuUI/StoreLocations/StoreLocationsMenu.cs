@@ -12,6 +12,7 @@ namespace userInterface
         */
         public void Menu()
         {
+            Console.Clear();
             Console.WriteLine("------Location Services------");
             Console.WriteLine("---------------------------------------");
             Console.WriteLine("-------- Store Location Menu Choices--------");

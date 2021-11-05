@@ -53,9 +53,9 @@ namespace userInterface
                     _lineItems.LineItemId = Int32.Parse(Console.ReadLine());
                     
 
-                    _products.ProductId = _lineItems.PId;
-                    _products.ProductName = _lineItems.ProductName;
-                    _products.ProductQuantity = _lineItems.ItemQuantity;
+                    // _products.ProductId = _lineItems.PId;
+                    // _products.ProductName = _lineItems.ProductName;
+                    // _products.ProductQuantity = _lineItems.ItemQuantity;
             
             return MenuType.AddLineItems;
                 case "2":

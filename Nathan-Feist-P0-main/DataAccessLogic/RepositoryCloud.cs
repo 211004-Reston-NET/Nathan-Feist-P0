@@ -82,7 +82,7 @@ public class RepositoryCloud : IUsers, ILineItems, IOrders, IProducts, IStoreLoc
                 ProductPrice = p_orders.ProductPrice,
                 ProductDescription = p_orders.ProductDescription,
                 ProductCategory = p_orders.ProductCategory,
-                ItemQuantity = p_orders.ProductId
+                ItemQuantity = p_orders.ProductQuantity,
             }
         );
         _context.SaveChanges();
@@ -100,6 +100,7 @@ public class RepositoryCloud : IUsers, ILineItems, IOrders, IProducts, IStoreLoc
                 ProductDescription = products.ProductDescription,
                 ProductCategory = products.ProductCategory,
                 ProductId = products.ProductId,
+                ProductQuantity = products.ItemQuantity,
 
             }
 
@@ -116,6 +117,7 @@ public class RepositoryCloud : IUsers, ILineItems, IOrders, IProducts, IStoreLoc
                     ProductDescription = products.ProductDescription,
                     ProductCategory = products.ProductCategory,
                     ProductId = products.ProductId,
+                    ProductQuantity = products.ItemQuantity,
 
 
 
@@ -135,6 +137,7 @@ public class RepositoryCloud : IUsers, ILineItems, IOrders, IProducts, IStoreLoc
             ProductPrice = productsToFind.ProductPrice,
             ProductDescription = productsToFind.ProductDescription,
             ProductCategory = productsToFind.ProductCategory,
+            ProductQuantity = productsToFind.ItemQuantity,
 
 
 

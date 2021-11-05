@@ -15,6 +15,7 @@ namespace userInterface
         }
              public void Menu()
         {
+            Console.Clear();
             Console.WriteLine("Add A Product! ");
             Console.WriteLine("---------------------------------------");
             Console.WriteLine($"Product ID: {_products.ProductId}");
@@ -27,8 +28,9 @@ namespace userInterface
             Console.WriteLine("[1] - Please Enter A  Product Name: ");
             Console.WriteLine("[2] - Please Enter A Product Price:");
             Console.WriteLine("[3] - Please Enter A Product Description:");
-            Console.WriteLine("[4] = Please Enter A Product Category:");
-            Console.WriteLine("[5] - Save A Product");
+            Console.WriteLine("[4] - Please Enter A Product Category:");
+            Console.WriteLine("[5] - Add More Stock");
+            Console.WriteLine("[6] - Save A Product");
             Console.WriteLine("[x] - Return to Products Menu");
             Console.WriteLine("---------------------------------------");
         }
@@ -56,6 +58,10 @@ namespace userInterface
                     _products.ProductCategory = Console.ReadLine();
                     return MenuType.AddProducts;
                 case "5":
+                    Console.WriteLine("Order Stock:");
+                    _products.ProductQuantity = Int32.Parse(Console.ReadLine());
+                    return MenuType.AddProducts;
+                case "6":
                      _productsBL.AddProducts(_products);
                      Console.WriteLine("Product Has Been Added");
                      Console.WriteLine("Please Press Enter! ");

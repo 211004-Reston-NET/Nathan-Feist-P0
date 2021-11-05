@@ -18,10 +18,10 @@ namespace userInterface
             Console.WriteLine("List of Products");
             List<Products> listOfProducts = _productsBL.GetAllProducts();
 
-            foreach (Products products in listOfProducts)
+            foreach (Products _products in listOfProducts)
             {
                 Console.WriteLine("---------------------------------------");
-                Console.WriteLine(products);
+                Console.WriteLine(_products);
                 Console.WriteLine("---------------------------------------");
             }
             Console.WriteLine("[1] - Search for a Product");

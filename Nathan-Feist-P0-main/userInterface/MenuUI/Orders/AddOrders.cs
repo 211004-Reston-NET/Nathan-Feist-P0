@@ -51,7 +51,9 @@ namespace userInterface
             Console.WriteLine($"User Name: {_users.UserName}");
             Console.WriteLine($"Product Name: {_products.ProductName}");
             Console.WriteLine($"Product Price:{_products.ProductPrice}");
-            Console.WriteLine($"Quantity: {_lineItems.ItemQuantity}");
+            //Console.WriteLine($"Stock: {_products.ProductQuantity}");
+            Console.WriteLine($"Amount To Purchas: {_lineItems.ItemQuantity}");
+            Console.WriteLine($"Store Name: {_store.StoreName}");
             Console.WriteLine($"Address: {_store.StoreAddress}");
             Console.WriteLine($"Total Price: {_order.TotalPrice}");
 
@@ -105,12 +107,14 @@ namespace userInterface
 
                     return MenuType.AddOrders;
                 case "5":
-                    
+
                     _order.UserName = _users.UserName;
                     _order.StoreAddress = _store.StoreAddress;
                     _order.ProductName = _products.ProductName;
                     _order.ProductPrice = _products.ProductPrice;
                     _order.ItemQuantity = _lineItems.ItemQuantity;
+
+                    _products.ProductQuantity = _products.ProductQuantity - _lineItems.ItemQuantity;
 
 
                     _ordersBL.AddOrders(_order);
