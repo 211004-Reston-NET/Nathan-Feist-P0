@@ -50,7 +50,8 @@ namespace userInterface
                 case MenuType.ShowLineItems:
                     return new ShowLineItems(new LineItemsBL(new RepositoryCloud(new ShopDatabaseP0Context(options))));
                 case MenuType.AddLineItems:
-                    return new AddLineItems(new LineItemsBL(new RepositoryCloud(new ShopDatabaseP0Context(options))));
+                    return new AddLineItems(new LineItemsBL(new RepositoryCloud(new ShopDatabaseP0Context(options))),
+                                            new ProductsBL(new RepositoryCloud(new ShopDatabaseP0Context(options))));
                 case MenuType.CurrentLineItems:
                     return new CurrentLineItems(new LineItemsBL(new RepositoryCloud(new ShopDatabaseP0Context(options))));
                 //Orders
@@ -58,7 +59,7 @@ namespace userInterface
                     return new OrdersMenu();
                 case MenuType.ShowOrders:
                     return new ShowOrders(new OrdersBL(new RepositoryCloud(new ShopDatabaseP0Context(options))),
-                                        new UsersBL(new RepositoryCloud (new ShopDatabaseP0Context(options))));
+                                        new UsersBL(new RepositoryCloud(new ShopDatabaseP0Context(options))));
                 case MenuType.AddOrders:
                     return new AddOrders(new OrdersBL(new RepositoryCloud(new ShopDatabaseP0Context(options))),
                                          new UsersBL(new RepositoryCloud(new ShopDatabaseP0Context(options))),

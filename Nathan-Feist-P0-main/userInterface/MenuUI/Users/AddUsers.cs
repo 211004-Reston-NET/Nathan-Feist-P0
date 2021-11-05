@@ -17,8 +17,9 @@ namespace userInterface
         public void Menu()
         {
             Console.Clear();
-            Console.WriteLine("Welcome To Add A user! ");
+            Console.WriteLine("Add A User!");
             Console.WriteLine("---------------------------------------");
+            Console.WriteLine($"User ID: {_users.UserId}");
             Console.WriteLine($"Name: {_users.UserName}");
             Console.WriteLine($"Address: {_users.UserAddress}");
             Console.WriteLine($"Phone: {_users.UserPhone}");

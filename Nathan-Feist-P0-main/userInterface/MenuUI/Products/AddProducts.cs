@@ -17,8 +17,10 @@ namespace userInterface
         {
             Console.WriteLine("Add A Product! ");
             Console.WriteLine("---------------------------------------");
+            Console.WriteLine($"Product ID: {_products.ProductId}");
             Console.WriteLine($"Product Name: {_products.ProductName}");
             Console.WriteLine($"Product Price: {_products.ProductPrice}");
+            Console.WriteLine($"Product Stock: {_products.ProductQuantity}");
             Console.WriteLine($"Product Description: {_products.ProductDescription}");
             Console.WriteLine($"Product Category: {_products.ProductCategory}");
             Console.WriteLine("---------------------------------------");

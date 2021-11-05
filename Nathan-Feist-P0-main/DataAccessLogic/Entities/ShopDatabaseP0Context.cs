@@ -29,7 +29,13 @@ namespace DataAccessLogic.Entities
 
             modelBuilder.Entity<LineItem>(entity =>
             {
-                entity.Property(e => e.QuantityNumber).HasColumnType("decimal(18, 0)");
+                entity.Property(e => e.ProductName)
+                    .HasMaxLength(300)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.StoreAddress)
+                    .HasMaxLength(300)
+                    .IsUnicode(false);
 
                 entity.HasOne(d => d.Product)
                     .WithMany(p => p.LineItems)

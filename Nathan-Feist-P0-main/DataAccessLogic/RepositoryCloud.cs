@@ -23,7 +23,8 @@ public class RepositoryCloud : IUsers, ILineItems, IOrders, IProducts, IStoreLoc
                 UserName = p_users.UserName,
                 UserAddress = p_users.UserAddress,
                 UserEmail = p_users.UserEmail,
-                UserPhone = p_users.UserPhone
+                UserPhone = p_users.UserPhone,
+                UserId = p_users.UserId,
             }
         );
         _context.SaveChanges();
@@ -81,6 +82,7 @@ public class RepositoryCloud : IUsers, ILineItems, IOrders, IProducts, IStoreLoc
                 ProductPrice = p_orders.ProductPrice,
                 ProductDescription = p_orders.ProductDescription,
                 ProductCategory = p_orders.ProductCategory,
+                ItemQuantity = p_orders.ProductId
             }
         );
         _context.SaveChanges();
@@ -113,7 +115,9 @@ public class RepositoryCloud : IUsers, ILineItems, IOrders, IProducts, IStoreLoc
                     ProductPrice = products.ProductPrice,
                     ProductDescription = products.ProductDescription,
                     ProductCategory = products.ProductCategory,
-                    ProductId = products.ProductId
+                    ProductId = products.ProductId,
+
+
 
 
                 }
@@ -133,6 +137,7 @@ public class RepositoryCloud : IUsers, ILineItems, IOrders, IProducts, IStoreLoc
             ProductCategory = productsToFind.ProductCategory,
 
 
+
         };
 
     }
@@ -146,7 +151,12 @@ public class RepositoryCloud : IUsers, ILineItems, IOrders, IProducts, IStoreLoc
         _context.LineItems.Add(
                 new Entity.LineItem()
                 {
-                    QuantityNumber = p_lineItems.ItemQuantity,
+                    LineItemId = p_lineItems.LineItemId,
+                    ItemQuantity = p_lineItems.ItemQuantity,
+                    ProductName = p_lineItems.ProductName,
+                    ProductId = p_lineItems.PId,
+                    StoreAddress = p_lineItems.StoreAddress,
+
                 }
                );
         _context.SaveChanges();
@@ -160,8 +170,12 @@ public class RepositoryCloud : IUsers, ILineItems, IOrders, IProducts, IStoreLoc
                 new Model.LineItems()
                 {
 
-                    ItemQuantity = (int)lineItems.QuantityNumber,
+                    ItemQuantity = lineItems.ItemQuantity,
                     LineItemId = lineItems.LineItemId,
+                    PId = lineItems.ProductId,
+                    StoreAddress = lineItems.StoreAddress,
+                    ProductName = lineItems.ProductName,
+
 
 
                 }
@@ -181,7 +195,7 @@ public class RepositoryCloud : IUsers, ILineItems, IOrders, IProducts, IStoreLoc
         return new Model.LineItems()
         {
             LineItemId = lineItemsToFind.ProductId,
-            ItemQuantity = (int)lineItemsToFind.QuantityNumber,
+            ItemQuantity = (int)lineItemsToFind.ItemQuantity,
 
         };
     }
@@ -285,7 +299,7 @@ public class RepositoryCloud : IUsers, ILineItems, IOrders, IProducts, IStoreLoc
     public StoreLocations GetStoreLocationsById(int p_id)
     {
         Entity.StoreLocation StoreLocationsToFind = _context.StoreLocations.Find(p_id);
-        return new Models.StoreLocations() 
+        return new Models.StoreLocations()
         {
             StoreId = StoreLocationsToFind.StoreId,
             StoreAddress = StoreLocationsToFind.StoreAddress,

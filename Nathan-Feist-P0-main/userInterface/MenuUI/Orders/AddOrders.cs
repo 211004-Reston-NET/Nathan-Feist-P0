@@ -46,8 +46,8 @@ namespace userInterface
             Console.Clear();
             Console.WriteLine("==== Order Information ====");
             Console.WriteLine("---------------------------------------");
-
-
+            Console.WriteLine($"Order ID: {_order.OrderId}");
+            Console.WriteLine($"User ID: {_users.UserId}");
             Console.WriteLine($"User Name: {_users.UserName}");
             Console.WriteLine($"Product Name: {_products.ProductName}");
             Console.WriteLine($"Product Price:{_products.ProductPrice}");

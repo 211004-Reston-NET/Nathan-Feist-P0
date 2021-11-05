@@ -15,9 +15,8 @@ namespace userInterface
             Console.WriteLine("------Line-Item------");
             Console.WriteLine("---------------------------------------");
             Console.WriteLine("Would You Like To... ");
-            Console.WriteLine("[1] Add New Line Item: ");
-            Console.WriteLine("[2] View All Inventory: ");
-            Console.WriteLine("[3] Search For Line Item: ");
+            Console.WriteLine("[1] View Inventory: ");
+            Console.WriteLine("[2] Search For an Item: ");
             Console.WriteLine("[x] Return to The Main Menu");
             Console.WriteLine("---------------------------------------");
         }
@@ -30,9 +29,7 @@ namespace userInterface
                 case "1":
                     return MenuType.AddLineItems;
                 case "2":
-                    return MenuType.ShowLineItems;
-                case "3":
-                    return MenuType.CurrentLineItems;     
+                    return MenuType.ShowLineItems;  
                 case "x":
                     return MenuType.MainMenu;
                 default:

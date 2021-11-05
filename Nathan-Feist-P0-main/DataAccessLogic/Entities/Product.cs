@@ -17,6 +17,7 @@ namespace DataAccessLogic.Entities
         public decimal ProductPrice { get; set; }
         public string ProductDescription { get; set; }
         public string ProductCategory { get; set; }
+        public int ItemQuantity { get; set; }
 
         public virtual ICollection<LineItem> LineItems { get; set; }
     }
