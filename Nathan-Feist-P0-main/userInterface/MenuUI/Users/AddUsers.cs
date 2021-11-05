@@ -16,6 +16,7 @@ namespace userInterface
         }
         public void Menu()
         {
+            Console.Clear();
             Console.WriteLine("Welcome To Add A user! ");
             Console.WriteLine("---------------------------------------");
             Console.WriteLine($"Name: {_users.UserName}");
@@ -54,12 +55,12 @@ namespace userInterface
                     _users.UserEmail = Console.ReadLine();
                     return MenuType.AddUsers;
                 case "5":
-                
+
                     _usersBL.AddUsers(_users);
                     Console.WriteLine("User Has Been Added");
                     Console.WriteLine("Please Press Enter! ");
                     Console.ReadLine();
-                    return MenuType.UserMenu;
+                    return MenuType.MainMenu;
                 case "x":
                     return MenuType.UserMenu;
                 default:

@@ -14,7 +14,7 @@ namespace Models
         private string _userAddress;
         private string _userPhone;
         private string _userEmail;
-        private List<Orders> _orders = new List<Orders>();
+        private List<Users> _users = new List<Users>();
 
 
 
@@ -78,7 +78,7 @@ namespace Models
             }
         }
 
-        public List<Orders> Orders { get { return _orders; } set { _orders = value; } }
+        public List<Users> User { get { return _users; } set { _users = value; } }
 
         public override string ToString()
         {

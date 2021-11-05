@@ -7,12 +7,18 @@ namespace Models
 {
     public class Orders
     {
+
         private int _orderId;
-        
-        private string _storeAddress;
         private decimal _totalPrice;
-        public int UserId { get; set; }
-        private List<LineItems> _lineItems = new List<LineItems>();
+        private string _storeAddress;
+
+        private string _userName;
+        private string _productName;
+        private decimal _productPrice;
+        private int _itemQuantity;
+
+        
+        private List<Orders> _orders = new List<Orders>();
         public int OrderId
         {
             get { return _orderId; }
@@ -33,31 +39,47 @@ namespace Models
             }
         }
 
-        public List<LineItems> LineItems
-        {
-            get { return _lineItems; }
-            set { _lineItems = value; }
 
-        }
+
 
         public decimal TotalPrice
         {
             get { return _totalPrice; }
             set { _totalPrice = value; }
         }
+        public string UserName
+        {
+            get { return _userName; }
+            set { _userName = value; }
+        }
 
+        public string ProductName
+        {
+            get { return _productName; }
+            set { _productName = value; }
+        }
+
+        public decimal ProductPrice
+        {
+            get { return _productPrice; }
+            set { _productPrice = value; }
+        }
+        public int ItemQuantity
+        {
+            get { return _itemQuantity; }
+            set { _itemQuantity = value; }
+        }
         public object StoreAddressId { get; set; }
-        public List<Orders> Order { get; set; }
+       
+
+
+        
+            public List<Orders> Order { get { return _orders; } set { _orders = value; } }
 
         public override string ToString()
         {
-            string Users =
-                    $@"Store Address: {StoreAddress}
-                    Total Price: {TotalPrice}
-                    List of Line Items: {LineItems}";
-
-            return Users;
+            return $"OrderID: {_orderId}\n Name: {UserName}\nAddress: {StoreAddress}\nProduct Name: {ProductName}\nProduct Price: {ProductPrice}\nItem Quantity: {ItemQuantity}\nTotal Price: {TotalPrice}";
         }
-
     }
+
 }

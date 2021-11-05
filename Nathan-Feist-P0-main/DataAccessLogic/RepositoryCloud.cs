@@ -160,7 +160,7 @@ public class RepositoryCloud : IUsers, ILineItems, IOrders, IProducts, IStoreLoc
                 new Model.LineItems()
                 {
 
-                    ItemQuantity = lineItems.QuantityNumber,
+                    ItemQuantity = (int)lineItems.QuantityNumber,
                     LineItemId = lineItems.LineItemId,
 
 
@@ -181,7 +181,7 @@ public class RepositoryCloud : IUsers, ILineItems, IOrders, IProducts, IStoreLoc
         return new Model.LineItems()
         {
             LineItemId = lineItemsToFind.ProductId,
-            ItemQuantity = lineItemsToFind.QuantityNumber,
+            ItemQuantity = (int)lineItemsToFind.QuantityNumber,
 
         };
     }
@@ -191,8 +191,15 @@ public class RepositoryCloud : IUsers, ILineItems, IOrders, IProducts, IStoreLoc
         _context.Orders.Add(
                 new Entity.Order()
                 {
-                    //StoreAddress = p_orders.StoreAddress,
+
+                    OrderId = p_orders.OrderId,
                     TotalPrice = p_orders.TotalPrice,
+                    StoreAddress = p_orders.StoreAddress,
+                    UserName = p_orders.UserName,
+                    ProductName = p_orders.ProductName,
+                    ProductPrice = p_orders.ProductPrice,
+                    ItemQuantity = p_orders.ItemQuantity,
+
 
 
                 }
@@ -206,9 +213,15 @@ public class RepositoryCloud : IUsers, ILineItems, IOrders, IProducts, IStoreLoc
         return _context.Orders.Select(orders =>
                 new Model.Orders()
                 {
-                    //StoreAddress = orders.StoreAddress,
-                    TotalPrice = orders.TotalPrice,
                     OrderId = orders.OrderId,
+                    TotalPrice = orders.TotalPrice,
+                    StoreAddress = orders.StoreAddress,
+                    UserName = orders.UserName,
+                    ProductName = orders.ProductName,
+                    ProductPrice = orders.ProductPrice,
+                    ItemQuantity = orders.ItemQuantity,
+
+
 
 
                 }
@@ -227,7 +240,7 @@ public class RepositoryCloud : IUsers, ILineItems, IOrders, IProducts, IStoreLoc
         return new Model.Orders()
         {
             OrderId = ordersToFind.OrderId,
-           // StoreAddress = ordersToFind.StoreAddress,
+            StoreAddress = ordersToFind.StoreAddress,
             TotalPrice = ordersToFind.TotalPrice,
 
         };
@@ -271,7 +284,14 @@ public class RepositoryCloud : IUsers, ILineItems, IOrders, IProducts, IStoreLoc
 
     public StoreLocations GetStoreLocationsById(int p_id)
     {
-        throw new System.NotImplementedException();
+        Entity.StoreLocation StoreLocationsToFind = _context.StoreLocations.Find(p_id);
+        return new Models.StoreLocations() 
+        {
+            StoreId = StoreLocationsToFind.StoreId,
+            StoreAddress = StoreLocationsToFind.StoreAddress,
+            StoreName = StoreLocationsToFind.StoreAddress,
+            StorePhone = StoreLocationsToFind.StoreAddress,
+        };
     }
 
 }

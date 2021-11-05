@@ -14,5 +14,6 @@ namespace DataAccessLogic.Entities
         public string ProductName { get; set; }
         public decimal ProductPrice { get; set; }
         public int ItemQuantity { get; set; }
+
     }
 }

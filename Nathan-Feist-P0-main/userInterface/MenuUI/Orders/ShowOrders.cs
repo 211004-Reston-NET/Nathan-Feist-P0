@@ -7,11 +7,16 @@ namespace userInterface
 {
      public class ShowOrders : IMenu
     {
+        private static Users _users = new Users();
+        private static Orders _orders = new Orders();
         private IOrdersBL _ordersBL;
+        private IUsersBL _usersBL;
         public static string _findOrdersName;
-        public ShowOrders(IOrdersBL p_ordersBL)
+        
+        public ShowOrders(IOrdersBL orders, IUsersBL users)
         {
-            _ordersBL = p_ordersBL;
+            _ordersBL = orders;
+            _usersBL = users;
         }
         public void Menu()
         {
@@ -36,9 +41,13 @@ namespace userInterface
                 case "x":
                     return MenuType.OrdersMenu;
                 case "1":
-                    Console.WriteLine("Enter a name for the Order you want to find");
-                    _findOrdersName = Console.ReadLine();
-                    return MenuType.CurrentOrders;
+                    // Console.WriteLine("Enter the name of the Buyer");
+                    // _findOrdersName = Console.ReadLine();
+                    // return MenuType.CurrentOrders;
+                     Console.WriteLine("Enter a User's Name: ");
+                    _users.UserName = Console.ReadLine();
+                    _users = _usersBL.GetUsers(_users.UserName);
+                    return MenuType.ShowOrders;
                 default:
                     Console.WriteLine("Please input a valid response!");
                     Console.WriteLine("Press Enter to continue");

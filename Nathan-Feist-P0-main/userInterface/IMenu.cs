@@ -21,7 +21,7 @@ namespace userInterface
 
         //LineItems
         LineItemsMenu,
-        AddToOrder,
+      
         AddLineItems,
         ShowLineItems,
         CurrentLineItems,

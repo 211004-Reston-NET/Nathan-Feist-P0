@@ -10,7 +10,7 @@ namespace Models
         private int _lineItemId;
         private string _productName;
         private string _storeAddress;
-        private decimal _itemQuantity;
+        private int _itemQuantity;
         private List<LineItems> _lineItems = new List<LineItems>();
         public int LineItemId
         {
@@ -34,7 +34,7 @@ namespace Models
             }
         }
 
-        public decimal ItemQuantity
+        public int ItemQuantity
         {
             get { return _itemQuantity; }
             set { _itemQuantity = value; }

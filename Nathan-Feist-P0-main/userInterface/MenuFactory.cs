@@ -47,9 +47,6 @@ namespace userInterface
                 //LineItems
                 case MenuType.LineItemsMenu:
                     return new LineItemsMenu();
-                case MenuType.AddToOrder:
-                    return new AddToOrder(new LineItemsBL(new RepositoryCloud(new ShopDatabaseP0Context(options))),
-                                             new OrdersBL(new RepositoryCloud(new ShopDatabaseP0Context(options))));
                 case MenuType.ShowLineItems:
                     return new ShowLineItems(new LineItemsBL(new RepositoryCloud(new ShopDatabaseP0Context(options))));
                 case MenuType.AddLineItems:
@@ -60,13 +57,14 @@ namespace userInterface
                 case MenuType.OrdersMenu:
                     return new OrdersMenu();
                 case MenuType.ShowOrders:
-                    return new ShowOrders(new OrdersBL(new RepositoryCloud(new ShopDatabaseP0Context(options))));
+                    return new ShowOrders(new OrdersBL(new RepositoryCloud(new ShopDatabaseP0Context(options))),
+                                        new UsersBL(new RepositoryCloud (new ShopDatabaseP0Context(options))));
                 case MenuType.AddOrders:
                     return new AddOrders(new OrdersBL(new RepositoryCloud(new ShopDatabaseP0Context(options))),
                                          new UsersBL(new RepositoryCloud(new ShopDatabaseP0Context(options))),
                                          new ProductsBL(new RepositoryCloud(new ShopDatabaseP0Context(options))),
-                                         new LineItemsBL(new RepositoryCloud(new ShopDatabaseP0Context(options))));
-                                        // new StoreLocationsBL(new RepositoryCloud(new ShopDatabaseP0Context(options))));
+                                         new LineItemsBL(new RepositoryCloud(new ShopDatabaseP0Context(options))),
+                                         new StoreLocationsBL(new RepositoryCloud(new ShopDatabaseP0Context(options))));
                 case MenuType.CurrentOrders:
                     return new CurrentOrders(new OrdersBL(new RepositoryCloud(new ShopDatabaseP0Context(options))));
                 //Products
