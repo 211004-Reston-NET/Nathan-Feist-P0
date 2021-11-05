@@ -32,7 +32,7 @@ namespace BusinessLogic
         {
             if (p_users.UserName == null || p_users.UserAddress == null || p_users.UserEmail == null)
             {
-                throw new Exception("You must have a value in all of the properties of the restaurant class");
+                throw new Exception("You must have a value in all of the properties");
             }
 
             return _users.AddUsers(p_users);

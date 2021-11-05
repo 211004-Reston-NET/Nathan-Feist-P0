@@ -9,12 +9,10 @@ namespace DataAccessLogic.Entities
     {
         public int OrderId { get; set; }
         public decimal TotalPrice { get; set; }
-        public int LineItemId { get; set; }
-        public int UserId { get; set; }
-        public Int32 StoreAddress { get; set; }
-
-        public virtual LineItem LineItem { get; set; }
-        public virtual StoreLocation StoreAddressNavigation { get; set; }
-        public virtual User User { get; set; }
+        public int StoreAddress { get; set; }
+        public string UserName { get; set; }
+        public string ProductName { get; set; }
+        public decimal ProductPrice { get; set; }
+        public int ItemQuantity { get; set; }
     }
 }

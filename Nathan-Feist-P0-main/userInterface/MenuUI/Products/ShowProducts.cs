@@ -25,6 +25,7 @@ namespace userInterface
                 Console.WriteLine("---------------------------------------");
             }
             Console.WriteLine("[1] - Search for a Product");
+            Console.WriteLine("[2] - Order a Product");
             Console.WriteLine("[x] - Go Back");
         }
 
@@ -39,6 +40,8 @@ namespace userInterface
                     Console.WriteLine("Enter a name for the Product you want to find");
                     _findProductsName = Console.ReadLine();
                     return MenuType.CurrentProducts;
+                case "2":
+                    return MenuType.AddOrders;
                 default:
                     Console.WriteLine("Please input a valid response!");
                     Console.WriteLine("Press Enter to continue");

@@ -8,6 +8,7 @@ namespace Models
     public class Orders
     {
         private int _orderId;
+        
         private string _storeAddress;
         private decimal _totalPrice;
         public int UserId { get; set; }

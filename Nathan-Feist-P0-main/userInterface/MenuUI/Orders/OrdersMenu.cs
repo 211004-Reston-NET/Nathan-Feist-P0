@@ -17,6 +17,7 @@ namespace userInterface
             Console.WriteLine("What would you like to do next? ");
             Console.WriteLine("[1] Make A New Order: ");
             Console.WriteLine("[2] View Past Orders: ");
+            Console.WriteLine("[3] Add Item To Shopping Cart");
             Console.WriteLine("[x] Return to The Main Menu");
             Console.WriteLine("---------------------------------------");
         }
@@ -30,6 +31,8 @@ namespace userInterface
                     return MenuType.AddOrders;
                 case "2":
                     return MenuType.ShowOrders;
+                case "3":
+                    return MenuType.AddToOrder;
                 case "x":
                     return MenuType.MainMenu;
                 default:

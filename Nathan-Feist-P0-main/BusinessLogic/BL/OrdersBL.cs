@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using DataAccessLogic;
+using DataAccessLogic.Entities;
 using Models;
 
 namespace BusinessLogic
@@ -28,9 +29,9 @@ namespace BusinessLogic
 
             public Orders AddOrders(Orders p_orders)
         {
-            if (p_orders.StoreAddress== null )
+            if (p_orders.OrderId == 0 )
             {
-                throw new Exception("You must have a value in all of the properties of the restaurant class");
+                throw new Exception("Value cannot be Null.");
             }
 
             return _orders.AddOrders(p_orders);
